@@ -24,6 +24,11 @@ int main(){
 
     valores = malloc(n * sizeof(float));//Alocando memória para o vetor
 
+    if (valores == NULL){
+        printf("Não foi possível alocar a memória\n");
+        return -1;
+    }
+
     printf("Digite %d valores(float):\n", n);
 
     for (i = 0; i < n; i++) {// Lendo os valores do vetor
