@@ -21,7 +21,8 @@ int main(){
         printf("Digite o valor %d: ", i + 1);
         scanf("%f", &valores[i]);
     }
-    
+    //Utiliza dois 'for' para primeiramente passar por todos os elementos do array
+    //e depois paraque cada elemento seja comparado com os seguintes.
     for (i = 0; i < n; i++){
         for (j = i + 1; j < n; j++){
             if (valores[i] > valores[j]){//compara o vetor i com o próximo(j = i+1)
