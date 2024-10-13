@@ -5,8 +5,8 @@ código, explicando o que faz cada uma das linhas*/
 #include <stdlib.h>
 
 int compara(const void *p, const void *q){//passa 2 ponteiros vazios com valores fixos, que apontam para 2 elementos que serão comparados
-    int a = *(float*)p;  //a e b recebem o conteúdo dos ponteiros e o tipo deles
-    int b = *(float*)q;  
+    float a = *(float*)p;  //a e b recebem o conteúdo dos ponteiros e o tipo deles
+    float b = *(float*)q;  
     if(a > b){//Caso a seja maior que b retorna 1,caso seja menor retorna -1 e caso seja igual retorna 0. Por padrão do qsort.  
         return 1;  
     }  
