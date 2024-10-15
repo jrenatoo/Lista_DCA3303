@@ -1,27 +1,26 @@
 /*9). Considerando a declaração
 int mat[4], *p, x;
 quais das seguintes expressões são válidas? Justifique.
-p = mat + 1;
-p = mat;
-x = (*mat);
+ p = mat + 1;
+ p = mat++;
+ p = ++mat;
+ x = (*mat);
 */
 
 #include <stdio.h>
 
 int main(void){
-    
     int mat[4], *p, x;
-    //Declara um vetor de 4 componentes, um ponteiro de p e uma variável x.
 
-    p = mat + 1;
-    //O ponteiro recebe o endereço do segundo componente d o vetor mat[], é válido e funciona de maneira semelhante à "&mat[1]".
+    p = mat + 1;//Válido e retorna o endereço de mat[1]
 
-    p = mat;
-    //O ponteiro recebe o endereço do primeiro componente d o vetor mat[], é válido e funciona de maneira semelhante à "&mat[0]".
+    //p = mat++;Inválido-> Apresenta o erro "expression must be a modifiable lvalue".
+                //O nome do array é constante(não pode ser incrementado).
 
-    x = (*mat);
-    //Embora o código esteja certo -recebendo o conteúdo do primeiro componente do vetor mat[4]- ele se torna inválido pelo fato que
-    //o vetor mat[4] não teve seus valores declarados, logo não foi inicializado. Assim o código não realiza  a função que deveria, ou seja, é inválido.
-    
+    //p = ++mat;Inválido-> Apresenta o erro "expression must be a modifiable lvalue".
+                //Ocorre o mesmo que no caso anterior.
+   
+    x = (*mat);//Válido->Retorna o conteúdo de mat[0]
+
     return 0;
 }
